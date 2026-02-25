@@ -12,6 +12,6 @@ namespace sale_doc
 	template<class... Types>
 		requires is_all_types_any_of_v<std::tuple<Types...>, document_accepted_types>
 	class document;
-	class products_document;
-	class sale_document;
+	struct products_document;
+	struct sale_document;
 } // namespace sale_doc
