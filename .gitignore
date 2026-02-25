@@ -1,4 +1,5 @@
-/bin/*.exe
+!/bin/*.txt
+/bin/*
 /build
 /*cache*
 /.vscode
