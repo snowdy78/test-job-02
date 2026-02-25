@@ -5,6 +5,10 @@
 
 namespace sale_doc
 {
+	/**
+	 * @brief класс, который создает size_t из строки
+	 *
+	 */
 	class size_t_from_string
 	{
 		size_t m_value = 0;

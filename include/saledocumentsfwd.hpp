@@ -5,8 +5,9 @@
 
 namespace sale_doc
 {
-	using string_type = std::wstring;
+	using string_type		= std::wstring;
 	using stringstream_type = std::wstringstream;
+	using ifstream_type		= std::wifstream;
 	class size_t_from_string;
 
 	using document_accepted_types = std::tuple<size_t_from_string, string_type>;
