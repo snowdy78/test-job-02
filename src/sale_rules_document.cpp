@@ -14,7 +14,7 @@ namespace sale_doc
 			auto it			  = std::find_if(begin(), end(), [&](const auto &i) {
 				  // под условия скидки подходят те каталоги, что находятся в наборе и соответствуют или превосходят по
 				  // количеству за одну позицию
-				  return item.find(std::get<item_index>(i)) != std::string::npos
+				  return item.find(std::get<item_index>(i)) != string_type::npos
 						 && item_amount.get() >= std::get<amount_index>(i).get();
 			  });
 			if (it != end())

@@ -3,7 +3,7 @@
 
 namespace sale_doc
 {
-	struct sale_rules_document : document<std::string, size_t_from_string>
+	struct sale_rules_document : document<string_type, size_t_from_string>
 	{
 		constexpr static size_t item_index	 = 0;
 		constexpr static size_t amount_index = 1;
