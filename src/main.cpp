@@ -31,12 +31,12 @@ int main()
 	sale_doc::sale_rules_document sale_rules;
 	sale_rules.parse("kit.txt");
 	products.parse("document.txt");
-	std::wcout << L"Содержимое документа продуктов:\n";
+	std::cout << "Содержимое документа продуктов:\n";
 	std::cout << products << std::endl;
-	std::wcout << L"Содержимое набора скидок:\n";
+	std::cout << "Содержимое набора скидок:\n";
 	std::cout << sale_rules << std::endl;
 	auto sales_result = sale_rules.search(products);
-	std::wcout << L"Позиции подходящие под условия скидки:\n";
+	std::cout << "Позиции подходящие под условия скидки:\n";
 	for (auto &i: sales_result)
 	{
 		std::cout << *i << std::endl;
