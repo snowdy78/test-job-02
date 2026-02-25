@@ -1,5 +1,5 @@
 #include "saledocuments.hpp"
-#include <clocale>
+#include <locale>
 /*
  * Нейминг приложения выбрал такой из-за примера со скидкой на товары
  */
@@ -26,7 +26,8 @@ std::wostream &operator<<(std::wostream &outstream, const sale_doc::document<Typ
 
 int main()
 {
-	setlocale(LC_ALL, "Russian");
+	std::locale::global(std::locale("")); 
+    std::wcout.imbue(std::locale());
 	sale_doc::products_document products;
 	sale_doc::sale_rules_document sale_rules;
 	sale_rules.parse("kit.txt");
