@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "saledocumentsfwd.hpp"
 
 namespace sale_doc
 {
@@ -9,7 +10,7 @@ namespace sale_doc
 		size_t m_value = 0;
 
 	public:
-		size_t_from_string(const std::string &value)
+		size_t_from_string(const string_type &value)
 		{
 			try
 			{
@@ -17,7 +18,7 @@ namespace sale_doc
 			}
 			catch (std::exception &err)
 			{
-				std::cout << "Error: " << err.what() << " (value: " << value << ")\n";
+				std::wcout << "Error: " << err.what() << " (value: " << value << ")\n";
 				throw err;
 			}
 		}
@@ -36,7 +37,7 @@ namespace sale_doc
 			return m_value;
 		}
 	};
-	inline std::ostream &operator<<(std::ostream &os, const size_t_from_string &value)
+	inline std::wostream &operator<<(std::wostream &os, const size_t_from_string &value)
 	{
 		return os << value.get();
 	}

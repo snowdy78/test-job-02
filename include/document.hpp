@@ -6,7 +6,6 @@
 #include <vector>
 #include "saledocumentsfwd.hpp"
 
-
 namespace sale_doc
 {
 	template<class... Types>
@@ -14,7 +13,8 @@ namespace sale_doc
 	class document
 	{
 	public:
-		using string_type = std::string;
+		using string_type = sale_doc::string_type;
+		using stringstream_type = sale_doc::stringstream_type;
 		template<class T>
 		using container_type		 = std::vector<T>;
 		using value_type			 = std::tuple<Types...>;
@@ -37,10 +37,10 @@ namespace sale_doc
 
 		bool parse(const std::string &path_to_document)
 		{
-			std::ifstream file(path_to_document);
+			std::wifstream file(path_to_document);
 			if (!file.is_open())
 				throw std::runtime_error("File not found");
-			std::string line;
+			string_type line;
 			bool skip_first_line = true;
 			while (!file.eof())
 			{
@@ -95,8 +95,8 @@ namespace sale_doc
 		 */
 		static string_type get_word_from_line(size_t word_number, const string_type &line)
 		{
-			std::stringstream ss(line);
-			std::string word;
+			std::wstringstream ss(line);
+			string_type word;
 			size_t i = 0;
 			while (ss >> word)
 			{
@@ -104,12 +104,12 @@ namespace sale_doc
 					return word;
 				i++;
 			}
-			return "";
+			return {};
 		}
 		static value_type get_data_from_line(const string_type &line)
 		{
 			value_type row;
-			std::string word;
+			string_type word;
 			std::apply(
 				[&word, &line](auto &&...args) {
 					size_t i = 0;
