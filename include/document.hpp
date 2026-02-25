@@ -13,6 +13,7 @@ namespace sale_doc
 		requires is_all_types_any_of_v<std::tuple<Types...>, document_accepted_types>
 	class document
 	{
+	public:
 		using string_type = std::string;
 		template<class T>
 		using container_type		 = std::vector<T>;
