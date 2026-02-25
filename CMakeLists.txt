@@ -12,8 +12,14 @@ file(
     "${PROJECT_INCLUDE_FILES_DIR}/*.h"
     "${PROJECT_INCLUDE_FILES_DIR}/*.hpp"
 )
+file(
+    GLOB_RECURSE
+    PROJECT_SOURCES
+    CONFIGURE_DEPENDS
+    "${PROJECT_SOURCE_FILES_DIR}/*.cpp"
+)
 
-add_executable(${PROGRAM_NAME} ${PROJECT_SOURCE_FILES_DIR}/main.cpp ${PROJECT_HEADERS})
+add_executable(${PROGRAM_NAME} ${PROJECT_SOURCES} ${PROJECT_HEADERS})
 
 set_target_properties(
     ${PROGRAM_NAME}
