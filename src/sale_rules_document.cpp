@@ -2,7 +2,6 @@
 #include <algorithm>
 namespace sale_doc
 {
-
 	std::vector<products_document::const_iterator> sale_rules_document::search(const products_document &products) const
 	{
 		std::vector<products_document::const_iterator> result;

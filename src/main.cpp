@@ -48,7 +48,7 @@ int main()
 	std::wcout << L"Содержимое набора скидок:\n";
 	std::wcout << sale_rules << std::endl;
 	auto sales_result = sale_rules.search(products);
-	std::cout << "Позиции подходящие под условия скидки:\n";
+	std::wcout << L"Позиции подходящие под условия скидки:\n";
 	for (auto &i: sales_result)
 	{
 		std::wcout << *i << std::endl;
