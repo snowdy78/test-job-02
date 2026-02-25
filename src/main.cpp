@@ -1,5 +1,12 @@
 #include "saledocuments.hpp"
+
+#ifdef _WIN32
+// на Windows Русский текст в терминале работает на C версии библиотеки
+#include <clocale>
+#elif __linux__
+// на Linux Русский текст в терминале работает на STL версии библиотеки
 #include <locale>
+#endif
 /*
  * Нейминг приложения выбрал такой из-за примера со скидкой на товары
  */
@@ -26,8 +33,12 @@ std::wostream &operator<<(std::wostream &outstream, const sale_doc::document<Typ
 
 int main()
 {
-	std::locale::global(std::locale("")); 
-    std::wcout.imbue(std::locale());
+#ifdef _WIN32
+	setlocale(LC_ALL, "Russian");
+#elif __linux__
+	std::locale::global(std::locale(""));
+	std::wcout.imbue(std::locale());
+#endif
 	sale_doc::products_document products;
 	sale_doc::sale_rules_document sale_rules;
 	sale_rules.parse("kit.txt");
