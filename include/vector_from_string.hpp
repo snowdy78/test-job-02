@@ -15,7 +15,7 @@ namespace sale_doc
 	public:
 		using std::vector<T>::vector;
 		/**
-		 * @brief создает вектор из объектов
+		 * @brief создает вектор объектов из строки
 		 *
 		 * @param str
 		 */
