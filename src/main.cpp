@@ -1,3 +1,4 @@
+#include <iostream>
 #include "saledocuments.hpp"
 
 #ifdef _WIN32
@@ -12,7 +13,7 @@
  */
 
 template<class... Types>
-std::wostream &operator<<(std::wostream &outstream, const std::tuple<Types...> &t)
+sale_doc::ostream_type &operator<<(sale_doc::ostream_type &outstream, const std::tuple<Types...> &t)
 {
 	std::apply(
 		[&outstream](auto &&...args) {
@@ -24,7 +25,7 @@ std::wostream &operator<<(std::wostream &outstream, const std::tuple<Types...> &
 }
 
 template<class... Types>
-std::wostream &operator<<(std::wostream &outstream, const sale_doc::document<Types...> &doc)
+sale_doc::ostream_type &operator<<(sale_doc::ostream_type &outstream, const sale_doc::document<Types...> &doc)
 {
 	for (auto &t: doc)
 		outstream << t << "\n";

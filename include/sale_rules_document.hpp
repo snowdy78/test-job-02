@@ -1,6 +1,6 @@
 #pragma once
 #include "products_document.hpp"
-
+#include "size_t_from_string.hpp"
 namespace sale_doc
 {
 	struct sale_rules_document : document<string_type, size_t_from_string>

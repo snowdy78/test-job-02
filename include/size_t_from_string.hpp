@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include <string>
 #include "saledocumentsfwd.hpp"
 
@@ -22,7 +21,6 @@ namespace sale_doc
 			}
 			catch (std::exception &err)
 			{
-				std::wcout << "Error: " << err.what() << " (value: " << value << ")\n";
 				throw err;
 			}
 		}
@@ -41,7 +39,7 @@ namespace sale_doc
 			return m_value;
 		}
 	};
-	inline std::wostream &operator<<(std::wostream &os, const size_t_from_string &value)
+	inline ostream_type &operator<<(ostream_type &os, const size_t_from_string &value)
 	{
 		return os << value.get();
 	}
