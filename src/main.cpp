@@ -44,21 +44,21 @@ int main()
 	sale_doc::sale_rules_document sale_rules;
 	sale_rules.parse("kit.txt");
 	products.parse("document.txt");
-	std::wcout << L"Содержимое документа продуктов:\n";
+	std::wcout << L"Содержимое документа:\n";
 	std::wcout << products << std::endl;
-	std::wcout << L"Содержимое набора скидок:\n";
+	std::wcout << L"Содержимое набора:\n";
 	std::wcout << sale_rules << std::endl;
 	auto sales_result = sale_rules.search(products);
 	if (sales_result.empty())
 	{
-		std::wcout << L"Позиции подходящие под условия скидки отсутствуют.\n";
+		std::wcout << L"Позиции подходящие под условия набора отсутствуют.\n";
 	}
 	else
 	{
-		std::wcout << L"Позиции подходящие под условия скидки:\n";
-		for (auto &i: sales_result)
+		std::wcout << L"Позиции подходящие под условия набора:\n";
+		for (auto &t: sales_result)
 		{
-			std::wcout << *i << std::endl;
+			std::wcout << t << "\n";
 		}
 	}
 	return 0;
