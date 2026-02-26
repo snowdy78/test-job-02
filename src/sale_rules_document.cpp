@@ -1,7 +1,7 @@
 #include "sale_rules_document.hpp"
 #include <algorithm>
 #include "vector_from_string.hpp"
-// (Особой надобности в существовании этого source файла нету, просто создал для видимости того, что я так умею)
+// (Особой надобности в существовании этого source файла нету, просто создал, чтобы хоть один раз он был в проекте)
 
 namespace sale_doc
 {
