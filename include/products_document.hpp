@@ -1,10 +1,11 @@
 #pragma once
 #include "document.hpp"
-
+#include "size_t_from_string.hpp"
+#include "vector_from_string.hpp"
 
 namespace sale_doc
 {
-	struct products_document : document<size_t_from_string, size_t_from_string, string_type>
+	struct products_document : document<size_t_from_string, size_t_from_string, vector_from_string<string_type>>
 	{
 		/**
 		 * @brief индекс "позиции" в документе

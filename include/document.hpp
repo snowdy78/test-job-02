@@ -6,7 +6,6 @@
 #include <vector>
 #include "saledocumentsfwd.hpp"
 
-
 namespace sale_doc
 {
 	/**
@@ -54,7 +53,7 @@ namespace sale_doc
 		 */
 		void parse(const std::string &path_to_document)
 		{
-			std::wifstream file(path_to_document);
+			ifstream_type file(path_to_document);
 			if (!file.is_open())
 				throw std::runtime_error("File not found");
 			string_type line;
